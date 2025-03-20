@@ -1,42 +1,96 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow-x: hidden;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+p {
+  text-transform: uppercase;
+  font-family: "Akkurat Mono", monospace;
+  font-size: 14px;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 2em;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.hero {
+  background: url("/assets/hero.jpg");
+  background-size: cover;
+}
+
+.about {
+  background-color: #e3e3db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about p {
+  width: 50%;
+  text-align: center;
+}
+
+.outro {
+  background: url("/assets/outro.jpg");
+  background-size: cover; 
+}
+
+footer {
+  position: relative;
+  width: 100vw;
+  height: 75svh;
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+footer h1 {
+  text-transform: uppercase;
+  font-family: "FK Screamer", sans-serif;
+  font-size: 6vw;
+  font-weight: 500;
+  line-height: 0.85;
+  overflow: hidden;
+}
+
+.copyright-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.explosion-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+}
+
+.explosion-particle-img {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  transform: translateX(-50%);
+  will-change: transform;
 }
